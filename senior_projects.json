@@ -1,0 +1,50 @@
+[
+    {
+        "card1": {
+            "title": "College Recruitment Website",
+            "description": "A website where we picked a college and made a recruitment website for them.",
+            "picture": "imgs/senior/college.png",
+            "link": "https://j-groesbeck.github.io/College-Recruitment-Website/",
+            "year": "senior"
+        },
+        "card2": {
+            "title": "Trunk or Treat!",
+            "description": "A website where we were asked to advertise our school's trunk or treat event.",
+            "picture": "imgs/senior/ToT.png",
+            "link": "https://j-groesbeck.github.io/Trunk-Or-Treat/",
+            "year": "senior"
+        }
+    },
+    {
+        "card1": {
+            "title": "Image Gallery",
+            "description": "A website where we pulled from a json file to create an image gallery for a topic of our choice.",
+            "picture": "imgs/senior/pics.png",
+            "link": "https://j-groesbeck.github.io/jquery-img-gallery/",
+            "year": "senior"
+        },
+        "card2": {
+            "title": "Movie Gallery",
+            "description": "A website where we pulled from a json file to create a gallery of movies.",
+            "picture": "imgs/senior/movies.png",
+            "link": "https://j-groesbeck.github.io/NJIT-Movie-Poster-Project/",
+            "year": "senior"
+        }
+    },
+    {
+        "card1": {
+            "title": "In-School Client Based Project",
+            "description": "A website where we worked with a client within our school to create a website for their class or program.",
+            "picture": "imgs/senior/band.png",
+            "link": "https://www.mrhsteched.com/music/index.html",
+            "year": "senior"
+        },
+        "card2": {
+            "title": "Client Based Learning Project",
+            "description": "A website where we worked with any client to create a website for their business. I chose to update Mr. Kilgores DHA Contracting website, streamlining and upgrading it from a viewer standpoint.",
+            "picture": "imgs/senior/dha.png",
+            "link": "https://dhacontracting.com/",
+            "year": "senior"
+        }
+    }
+]
