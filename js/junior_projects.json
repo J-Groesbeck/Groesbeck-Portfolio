@@ -4,15 +4,13 @@
             "title": "Summer-tainment",
             "description": "A website that details an activity we did over the summer to refresh our skills.",
             "picture": "imgs/junior/summertainment.png",
-            "link": "https://j-groesbeck.github.io/Summer-tainment/",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/Summer-tainment/"
         },
         "card2": {
             "title": "Look Ma I'm Famous!",
             "description": "A website that profiles an influential person born before the 20th century and describes their life.",
             "picture": "imgs/junior/famous.png",
-            "link": "https://j-groesbeck.github.io/November-Monthly-Project/",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/November-Monthly-Project/"
         }
     },
     {
@@ -20,15 +18,13 @@
             "title": "Magic 8-Ball",
             "description": "A website that uses JavaScript to allow the user to input a question and receive a response, simulating a Magic 8-Ball.",
             "picture": "imgs/junior/8ball.png",
-            "link": "https://j-groesbeck.github.io/Magic-8-Ball/",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/Magic-8-Ball/"
         },
         "card2": {
             "title": "Mad Libs",
             "description": "A website that uses JavaScript to create a Mad Libs experience for the user.",
             "picture": "imgs/junior/madlib.png",
-            "link": "https://github.com/J-Groesbeck/December-Monthly-Project",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/December-Monthly-Project/"
         }
     },
     {
@@ -36,15 +32,13 @@
             "title": "On My Birthday...",
             "description": "A website that uses JavaScript to update content on button clicks and presents historical events that occurred on the user's birthday.",
             "picture": "imgs/junior/birthday.png",
-            "link": "https://github.com/J-Groesbeck/January-Monthly-Project",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/January-Monthly-Project/"
         },
         "card2": {
             "title": "Rock Paper Scissors",
             "description": "A website that allows the user to play Rock Paper Scissors against a JavaScript-controlled computer.",
             "picture": "imgs/junior/rps.png",
-            "link": "https://github.com/J-Groesbeck/RPS",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/RPS/"
         }
     },
     {
@@ -52,15 +46,13 @@
             "title": "Lucky Me Lottery",
             "description": "A website that allows the user to input a list of names and randomly selects one.",
             "picture": "imgs/junior/rng.png",
-            "link": "https://github.com/J-Groesbeck/March-Monthly-Project",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/March-Monthly-Project/"
         },
         "card2": {
             "title": "Future Me",
             "description": "A website that describes a potential future career of the user.",
             "picture": "imgs/junior/future.png",
-            "link": "https://github.com/J-Groesbeck/April-Monthly-Project",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/April-Monthly-Project/"
         }
     },
     {
@@ -68,15 +60,13 @@
             "title": "Super Team",
             "description": "A website that uses loops over arrays of objects to generate and categorize a custom group.",
             "picture": "imgs/junior/team.png",
-            "link": "https://github.com/J-Groesbeck/May-Monthly-Website",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/May-Monthly-Website/"
         },
         "card2": {
             "title": "Little Bird Toy Company",
             "description": "A website created in collaboration with a partner for a hypothetical company/client.",
             "picture": "imgs/junior/LBTC.png",
-            "link": "https://github.com/J-Groesbeck/Partner-Project---Toy-Store-Project",
-            "year": "junior"
+            "link": "https://j-groesbeck.github.io/Partner-Project---Toy-Store-Project/"
         }
     }
 ]

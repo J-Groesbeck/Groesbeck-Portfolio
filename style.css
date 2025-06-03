@@ -2,6 +2,10 @@
     background-color: black;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .full-height {
     height: 100vh;
 }
@@ -84,7 +88,12 @@
     width: 0;
     overflow: hidden;
     box-sizing: border-box;
-    display: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-panel a {
+    margin-top: auto;
 }
 
 .hover-card.align-left .slide-panel {

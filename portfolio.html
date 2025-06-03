@@ -9,6 +9,8 @@
 
     <!-- your custom styles -->
     <link rel="stylesheet" href="style.css">
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 
     <!-- Bootstrap CSS v5.3.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -69,57 +71,69 @@
         </div>
     </header>
     <main>
-        <div class="container py-5">
-            <div class="row g-4">
-                <div class="col-6">
+        <div class="container-fluid py-5" id="vue_app">
+            <div class="row g-5">
+                <div class="col-1"></div>
+                <div class="col-5">
                     <div class="hover-card align-left">
                         <div class="col-12">
                             <img src="imgs/sophomore/soph-portfolio.png" class="w-100 rounded-4" alt="">
                         </div>
-                        <div class="slide-panel rounded-end-4 p-2">
+                        <div class="slide-panel rounded-end-4 p-3">
                             <h3>Little Bird Toy Company</h3>
                             <p>A website where we were tasked to work with a partner to create a site for a fake
                                 company/client.</p>
+                            <a href="https://j-groesbeck.github.io/Year-1-Portfolio/" target="_blank" type="button"
+                                class="btn btn-primary">Visit Site</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-5">
                     <div class="hover-card align-right">
                         <div class="col-12">
                             <img src="imgs/sophomore/coffee.png" class="w-100 rounded-4" alt="">
                         </div>
-                        <div class="slide-panel rounded-start-4 p-2">
+                        <div class="slide-panel rounded-start-4 p-3">
                             <h3>Little Bird Toy Company</h3>
                             <p>A website where we were tasked to work with a partner to create a site for a fake
                                 company/client.</p>
+                            <a href="https://j-groesbeck.github.io/Coffee-Shop-Project--Soph-/" target="_blank"
+                                type="button" class="btn btn-primary">Visit Site</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-6">
-                    <div class="hover-card align-left">
+            <div class="row g-5 mt-2" v-for="(projectRow, rowIndex) in junior_projects" :key="'junior-row-' + rowIndex">
+                <div class="col-1"></div>
+                <!-- Inner loop: loop over the two cards (card1, card2) in each row -->
+                <div class="col-5" v-for="(card, cardIndex) in [ projectRow.card1, projectRow.card2 ]"
+                    :key="card.title">
+                    <div class="hover-card" :class="cardIndex === 0 ? 'align-left' : 'align-right'">
                         <div class="col-12">
-                            <img src="imgs/LBTC.png" class="w-100 rounded-4" alt="">
+                            <img :src="card.picture" class="w-100 rounded-4" :alt="card.title" />
                         </div>
-                        <div class="slide-panel rounded-end-4 p-2">
-                            <h3>Little Bird Toy Company</h3>
-                            <p>A website where we were tasked to work with a partner to create a site for a fake
-                                company/client.</p>
+                        <div class="slide-panel p-3" :class="cardIndex === 0 ? 'rounded-end-4' : 'rounded-start-4'">
+                            <h3>{{ card.title }}</h3>
+                            <p>{{ card.description }}</p>
+                            <a :href="card.link" target="_blank" type="button" class="btn btn-primary">Visit Site</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-6">
-                    <div class="hover-card align-right">
+            </div>
+            <div class="row g-5 mt-2" v-for="(projectRow, rowIndex) in senior_projects" :key="'senior-row-' + rowIndex">
+                <div class="col-1"></div>
+                <!-- Inner loop: loop over the two cards (card1, card2) in each row -->
+                <div class="col-5" v-for="(card, cardIndex) in [ projectRow.card1, projectRow.card2 ]"
+                    :key="card.title">
+                    <div class="hover-card" :class="cardIndex === 0 ? 'align-left' : 'align-right'">
                         <div class="col-12">
-                            <img src="imgs/LBTC.png" class="w-100 rounded-4" alt="">
+                            <img :src="card.picture" class="w-100 rounded-4" :alt="card.title" />
                         </div>
-                        <div class="slide-panel rounded-start-4 p-2">
-                            <h3>Little Bird Toy Company</h3>
-                            <p>A website where we were tasked to work with a partner to create a site for a fake
-                                company/client.</p>
+                        <div class="slide-panel p-3" :class="cardIndex === 0 ? 'rounded-end-4' : 'rounded-start-4'">
+                            <h3>{{ card.title }}</h3>
+                            <p>{{ card.description }}</p>
+                            <a :href="card.link" target="_blank" type="button" class="btn btn-primary">Visit Site</a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +146,8 @@
 
     <!-- jQuery first, then your script, then Popper & Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
