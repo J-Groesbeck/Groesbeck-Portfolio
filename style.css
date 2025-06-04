@@ -109,3 +109,28 @@ body {
         padding-left 0.5s ease-in-out,
         padding-right 0.5s ease-in-out;
 }
+
+/* Container that fills the viewport and centers content */
+.text-box {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keep letters in a row */
+.letters {
+    display: flex;
+    align-items: center;
+    /* no positioning here; the spans themselves will transform */
+}
+
+/* Each letter: large, bold, and ready to be translated */
+.letters span {
+    display: inline-block;
+    font-size: 8vw;
+    font-weight: 900;
+    transition: transform 3s ease-in-out;
+    background-color: transparent;
+}

@@ -31,3 +31,16 @@ $('.smaller-square').on('click', function () {
     }
     scrollActive = !scrollActive
 });
+
+
+
+$(document).ready(function () {
+    setInterval(function () {
+        $('.letters span').each(function () {
+            // Random x/y between -20 and +20 px
+            var offsetX = (Math.random() * 40) - 20;
+            var offsetY = (Math.random() * 40) - 20;
+            $(this).css('transform', 'translate(' + offsetX + 'px, ' + offsetY + 'px)');
+        });
+    }, 3000);
+});
