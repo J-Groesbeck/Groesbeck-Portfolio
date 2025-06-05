@@ -1,0 +1,335 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* makes sure it's above other elements */
+    background-color: black;
+    /* ensure background is solid */
+}
+
+body {
+    overflow-x: hidden !important;
+}
+
+.smaller-square {
+    margin-top: 50px;
+}
+
+.square>div {
+    background-color: #380356 !important;
+}
+
+#nav-icon {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-morph-out {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.icon-morph-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.smaller-square {
+    display: flex;
+    justify-content: center;
+}
+
+.main-title {
+    font-size: 12vw;
+    font-weight: 900;
+}
+
+.text-box-home {
+    position: absolute;
+    background-color: transparent;
+}
+
+/* Keep letters in a row */
+.letters-home {
+    display: flex;
+    align-items: center;
+}
+
+.letters-home span {
+    display: inline-block;
+    font-size: 8vw;
+    font-weight: 900;
+    transition: transform 3s ease-in-out;
+    background-color: transparent;
+}
+
+/*─────────────────────────────────────────────────────────*/
+/* (A) Make the parent .col-12 a positioning context */
+.col-12 {
+    position: relative;
+}
+
+/*─────────────────────────────────────────────────────────*/
+/* (B) BASE STYLES FOR “DESIGNER” */
+.text-box-home {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    transform: rotate(-45deg);
+    transform-origin: center center;
+    cursor: context-menu;
+    transition: transform 0.5s ease-in-out;
+}
+
+.letters-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letters-home span {
+    display: inline-block;
+    font-size: 6vw;
+    font-weight: 900;
+    background-color: transparent;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Scatter “DESIGNER” letters */
+.letters-home span:nth-child(1) {
+    transform: translate(-30px, -30px);
+}
+
+.letters-home span:nth-child(2) {
+    transform: translate(-15px, 0px);
+}
+
+.letters-home span:nth-child(3) {
+    transform: translate(0px, -60px);
+}
+
+.letters-home span:nth-child(4) {
+    transform: translate(50px, -40px);
+}
+
+.letters-home span:nth-child(5) {
+    transform: translate(35px, -20px);
+}
+
+.letters-home span:nth-child(6) {
+    transform: translate(80px, 20px);
+}
+
+.letters-home span:nth-child(7) {
+    transform: translate(20px, 40px);
+}
+
+.letters-home span:nth-child(8) {
+    transform: translate(50px, 150px);
+}
+
+.text-box-home:hover .letters-home span {
+    transform: translate(0, 0);
+}
+
+/*─────────────────────────────────────────────────────────*/
+/* (C) STYLES FOR “DEVELOPER” */
+.text-box-dev {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: rotate(45deg);
+    transform-origin: center center;
+    cursor: context-menu;
+    transition: transform 0.5s ease-in-out;
+}
+
+.letters-dev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letters-dev span {
+    display: inline-block;
+    font-size: 6vw;
+    font-weight: 900;
+    background-color: transparent;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Scatter “DEVELOPER” letters */
+.letters-dev span:nth-child(1) {
+    transform: translate(30px, 50px);
+}
+
+.letters-dev span:nth-child(2) {
+    transform: translate(50px, -10px);
+}
+
+.letters-dev span:nth-child(3) {
+    transform: translate(80px, 0px);
+}
+
+.letters-dev span:nth-child(4) {
+    transform: translate(60px, 50px);
+}
+
+.letters-dev span:nth-child(5) {
+    transform: translate(30px, -60px);
+}
+
+.letters-dev span:nth-child(6) {
+    transform: translate(10px, 30px);
+}
+
+.letters-dev span:nth-child(7) {
+    transform: translate(-5px, -20px);
+}
+
+.letters-dev span:nth-child(8) {
+    transform: translate(15px, -60px);
+}
+
+.letters-dev span:nth-child(9) {
+    transform: translate(45px, -80px);
+}
+
+.text-box-dev:hover .letters-dev span {
+    transform: translate(0, 0);
+}
+
+/*─────────────────────────────────────────────────────────*/
+/* (D) NEW STYLES FOR “PROGRAMMER” */
+.text-box-prog {
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    /* center it horizontally under the name */
+    transform: translateX(-50%);
+    cursor: context-menu;
+}
+
+/* Keep letters in a row */
+.letters-prog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Base style for “PROGRAMMER” letters */
+.letters-prog span {
+    display: inline-block;
+    font-size: 6vw;
+    font-weight: 900;
+    background-color: transparent;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Scatter each letter of “PROGRAMMER” differently */
+.letters-prog span:nth-child(1) {
+    transform: translate(-40px, 20px);
+}
+
+.letters-prog span:nth-child(2) {
+    transform: translate(-20px, -10px);
+}
+
+.letters-prog span:nth-child(3) {
+    transform: translate(0px, 40px);
+}
+
+.letters-prog span:nth-child(4) {
+    transform: translate(30px, -30px);
+}
+
+.letters-prog span:nth-child(5) {
+    transform: translate(50px, 10px);
+}
+
+.letters-prog span:nth-child(6) {
+    transform: translate(20px, -50px);
+}
+
+.letters-prog span:nth-child(7) {
+    transform: translate(-10px, -20px);
+}
+
+.letters-prog span:nth-child(8) {
+    transform: translate(-30px, 50px);
+}
+
+.letters-prog span:nth-child(9) {
+    transform: translate(10px, 80px);
+}
+
+.letters-prog span:nth-child(10) {
+    transform: translate(40px, 30px);
+}
+
+/* On hover, reset all “PROGRAMMER” letters back into a straight line */
+.text-box-prog:hover .letters-prog span {
+    transform: translate(0, 0);
+}
+
+
+.no-gutter {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-caption {
+    background-color: #0000007e;
+}
+
+/* 1. Ensure overflow is hidden (prevents extra blank space) */
+#carouselExampleCaptions .carousel-inner {
+    overflow: hidden;
+}
+
+/* 2. We’ll later set its height via JavaScript, but you can add a smooth transition if desired: */
+#carouselExampleCaptions .carousel-inner {
+    transition: height 0.3s ease;
+    /* optional animation when height changes */
+}
+
+
+/* 1. Make the carousel itself a “positioned” container */
+#carouselExampleCaptions {
+    position: relative;
+}
+
+/* 2. Force that single caption to be absolutely placed over the images */
+#carouselExampleCaptions .carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    /* adjust vertical offset as desired */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    /* keep it from hitting the sides too hard */
+    text-align: center;
+    /* center the text inside */
+    z-index: 10;
+    /* ensure it sits above the slides */
+}
+
+/* 3. Prevent overlay text from wrapping oddly on very small screens */
+@media (max-width: 575.98px) {
+    #carouselExampleCaptions .carousel-caption h5 {
+        font-size: 1rem;
+        /* shrink heading for extra_small if needed */
+    }
+
+    #carouselExampleCaptions .carousel-caption a.btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
