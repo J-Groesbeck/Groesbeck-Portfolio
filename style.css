@@ -1,4 +1,7 @@
-body, .container, .container-fluid, main {
+body,
+.container,
+.container-fluid,
+main {
     background-color: black;
 }
 
@@ -156,12 +159,6 @@ footer * {
     display: inline !important;
 }
 
-/* Footer logo size */
-.footer-logo-sizing {
-    height: 4rem;
-    width: auto;
-}
-
 /* btn styling */
 .btn-primary {
     --bs-btn-color: #fff !important;
@@ -218,4 +215,11 @@ footer * {
     .hover-card:hover {
         transform: none !important;
     }
+}
+
+.card-border {
+    border: 2px solid #93009c;
+    /* optional: keep the same rounded corners as the image */
+    box-sizing: border-box;
+    /* ensure the border doesn’t blow out the width/height */
 }

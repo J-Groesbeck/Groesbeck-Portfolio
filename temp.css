@@ -309,7 +309,7 @@ body {
 /* 2. Force that single caption to be absolutely placed over the images */
 #carouselExampleCaptions .carousel-caption {
     position: absolute;
-    bottom: 20px;
+    bottom: 45px;
     /* adjust vertical offset as desired */
     left: 50%;
     transform: translateX(-50%);
@@ -332,4 +332,8 @@ body {
         padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
     }
+}
+
+.border-bottom-port {
+    border-bottom: 3px solid #93009c !important;
 }

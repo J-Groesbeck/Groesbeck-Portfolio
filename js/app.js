@@ -29,7 +29,7 @@ const vue_app = Vue.createApp({
             const isSmallScreen = $(window).width() < 768;
 
             if (!isSmallScreen) {
-                // ─── Large screens (≥ md): unchanged hover‐to‐slide­-out logic ───
+                // ─── Large screens (≥ md): unchanged hover‐to‐slide‐out logic ───
                 $('.hover-card').each(function () {
                     const $card = $(this);
                     const isLeft = $card.hasClass('align-left');
@@ -103,21 +103,33 @@ const vue_app = Vue.createApp({
                     $card.off('mouseenter mouseleave');
                     $panel.stop(true, true).css({ width: '100%' });
 
+                    // Ensure the panel starts with full rounding when closed
+                    $panel
+                        .removeClass('rounded-start-4 rounded-end-4 rounded-bottom-4')
+                        .addClass('rounded-4');
+
                     // On tap: toggle panel’s visibility
                     $card.off('click').on('click', function (e) {
                         e.preventDefault();
 
                         if ($panel.is(':visible')) {
-                            // Hide children first, then collapse the panel
+                            // Hide children first, then collapse the panel, then restore rounding
                             $panelChildren.slideUp(200, function () {
-                                $panel.slideUp(200);
+                                $panel.slideUp(200, function () {
+                                    $panel
+                                        .removeClass('rounded-bottom-4')
+                                        .addClass('rounded-4');
+                                    $card.removeClass('rounded-4').addClass('rounded-top-4')
+                                });
                             });
                         } else {
-                            // Before showing, force the panel to use rounded-bottom-4
+                            // Before showing: remove any previous rounding and add bottom-only rounding
                             $panel
-                                .removeClass('rounded-start-4 rounded-end-4')
+                                .removeClass('rounded-start-4 rounded-end-4 rounded-4')
                                 .addClass('rounded-bottom-4');
-
+                            $card
+                                .removeClass('rounded-top-4')
+                                .addClass('rounded-4');
                             // Slide the panel down, then reveal its contents
                             $panel.slideDown(200, function () {
                                 $panelChildren.slideDown(200);
@@ -131,14 +143,19 @@ const vue_app = Vue.createApp({
             if (section === "all") {
                 $('#sophomore, #junior, #senior').slideDown();
             } else {
-                $('#sophomore, #junior, #senior').not(`#${section}`).slideUp();
+                $('#sophomore, #junior, #senior')
+                    .not(`#${section}`)
+                    .slideUp();
                 $(`#${section}`).slideDown();
             }
 
             if (typeof animateLetters === 'function') {
                 animateLetters();
             }
+            $('.filter-btn').removeClass('active');
+            $(`.filter-btn[data-section="${section}"]`).addClass('active');
         }
+
     }
 });
 

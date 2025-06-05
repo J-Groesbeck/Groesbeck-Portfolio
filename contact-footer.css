@@ -1,0 +1,36 @@
+/* 1) Ensure the html/body take up 100% height and have no default margins */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* 2) Make the body a flex‐column container */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3) Let <main> expand to fill available space */
+main {
+    flex: 1;
+}
+
+/* 4) Your existing footer styles (you can leave these mostly as they are) */
+footer {
+    background-color: #380356;
+    padding: 1rem 2rem 0.5rem;
+    /* top/bottom padding adjustments */
+    text-align: center !important;
+    color: white;
+    /* no need for any positioning here—flex handles it */
+}
+
+footer * {
+    background-color: #380356;
+}
+
+.fa-links {
+    color: rgb(251, 251, 251);
+    display: inline !important;
+}
