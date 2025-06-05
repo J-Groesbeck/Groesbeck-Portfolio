@@ -1,4 +1,4 @@
-* {
+body, .container, .container-fluid, main {
     background-color: black;
 }
 
@@ -50,10 +50,7 @@ body {
     z-index: 50;
 }
 
-.hover-card,
-.hover-card *,
-.slide-panel,
-.slide-panel * {
+.hover-card {
     background-color: transparent !important;
 }
 
@@ -64,20 +61,21 @@ body {
 }
 
 .hover-card.align-left {
-    transform-origin: top left;
+    transform-origin: left;
 }
 
 .hover-card.align-right {
-    transform-origin: top right;
+    transform-origin: right;
 }
 
 .hover-card:hover {
-    transform: scale(1.4);
+    transform: scale(1.5);
 }
 
 /* Slide panel */
 .slide-panel,
-.slide-panel * {
+.slide-panel h6,
+.slide-panel h4 {
     background-color: white !important;
 }
 
@@ -133,4 +131,91 @@ body {
     font-weight: 900;
     transition: transform 3s ease-in-out;
     background-color: transparent;
+    color: whitesmoke;
+}
+
+/* Footer styling */
+footer {
+    background-color: #380356;
+    padding: 2rem;
+    text-align: center !important;
+    padding-bottom: .5rem !important;
+    padding-top: 1rem !important;
+    justify-content: center;
+    color: white;
+    /* White text */
+}
+
+footer * {
+    background-color: #380356;
+}
+
+/* Footer social media links */
+.fa-links {
+    color: rgb(251, 251, 251);
+    display: inline !important;
+}
+
+/* Footer logo size */
+.footer-logo-sizing {
+    height: 4rem;
+    width: auto;
+}
+
+/* btn styling */
+.btn-primary {
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #93009c !important;
+    --bs-btn-border-color: #93009c !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #6b0078 !important;
+    --bs-btn-hover-border-color: #380356 !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #380356 !important;
+    --bs-btn-active-border-color: #000000 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+    --bs-btn-disabled-bg: #93009c !important;
+    --bs-btn-disabled-border-color: #93009c !important;
+}
+
+/*  ────────────────────────────────────────────────────────────────────────────── */
+/*  Below: overrides for small screens (< md) so that slide-panels drop down  */
+/*  ────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+
+    /* Make each slide-panel positioned directly beneath the image, full‐width, hidden */
+    .hover-card .slide-panel {
+        position: relative !important;
+        top: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: hidden;
+        display: none;
+        /* hide by default */
+        box-sizing: border-box;
+        margin-top: 0;
+        /* ← no gap—touch the image’s bottom */
+    }
+
+    /* Hide all inner elements until panel is revealed */
+    .hover-card .slide-panel>* {
+        display: none;
+    }
+
+    /* Override any left/right positioning coming from large-screen rules */
+    .hover-card.align-left .slide-panel,
+    .hover-card.align-right .slide-panel {
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    /* Disable hover scale on small screens */
+    .hover-card,
+    .hover-card:hover {
+        transform: none !important;
+    }
 }

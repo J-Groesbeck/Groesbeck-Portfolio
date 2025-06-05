@@ -9,6 +9,11 @@
 
     <!-- your custom styles -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="temp.css">
+    <!-- Link to the Font Awesome stylesheet for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to Font Awesome for icon usage -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 
@@ -24,6 +29,11 @@
                 <div class="col-12">
                     <div class="square">
                         <div class="smaller-square">
+                            <div class="d-flex align-items-center justify-content-center"
+                                style="background-color: transparent">
+                                <i id="nav-icon" class="fa-regular fa-compass fa-2xl"
+                                    style="background-color: transparent; color: white"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,10 +82,31 @@
     </header>
     <main>
         <div class="container-fluid py-5" id="vue_app">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mt-5">Portfolio</h1>
+                </div>
+                <div class="col-12">
+                    <h2 class="text-center">Explore my journey throughout my three years within the web design program!
+                        From
+                        sophomore year to today, see how my abilities have progressed and grown - on the front end and
+                        the
+                        back
+                        end!</h2>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-2"><button type="button" class="btn btn-primary"
+                        v-on:click="changeDisplayed('all')">All</button></div>
+                <div class="col-2"><button type="button" class="btn btn-primary"
+                        v-on:click="changeDisplayed('sophomore')">Sophomore Year</button></div>
+                <div class="col-2"><button type="button" class="btn btn-primary"
+                        v-on:click="changeDisplayed('junior')">Junior Year</button></div>
+                <div class="col-2"><button type="button" class="btn btn-primary"
+                        v-on:click="changeDisplayed('senior')">Senior Year</button></div>
+            </div>
             <div id="sophomore">
                 <section class="text-box text-center mt-5">
                     <div class="letters">
-                        <!-- Each letter of "SOPHOMORE YEAR" as its own span -->
                         <span>S</span>
                         <span>O</span>
                         <span>P</span>
@@ -93,31 +124,31 @@
                     </div>
                 </section>
                 <div class="row g-5 mt-2">
-                    <div class="col-1"></div>
-                    <div class="col-5">
-                        <div class="hover-card align-left">
+                    <div class="d-none d-xl-block col-1"></div>
+                    <div class="col-12 col-md-6 col-xl-5">
+                        <div class="hover-card z-0 align-left">
                             <div class="col-12">
                                 <img src="imgs/sophomore/soph-portfolio.png" class="w-100 rounded-4" alt="">
                             </div>
-                            <div class="slide-panel rounded-end-4 p-3">
-                                <h3>Little Bird Toy Company</h3>
-                                <p>A website where we were tasked to work with a partner to create a site for a fake
-                                    company/client.</p>
+                            <div class="slide-panel rounded-end-4 p-2">
+                                <h4>Sophomore Portfolio</h4>
+                                <h6>A website where we were told to make a portfolio tracking our best websites from
+                                    that year.</h6>
                                 <a href="https://j-groesbeck.github.io/Year-1-Portfolio/" target="_blank" type="button"
                                     class="btn btn-primary">Visit Site</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-5">
-                        <div class="hover-card align-right">
+                    <div class="col-12 col-md-6 col-xl-5">
+                        <div class="hover-card z-0 align-right">
                             <div class="col-12">
                                 <img src="imgs/sophomore/coffee.png" class="w-100 rounded-4" alt="">
                             </div>
-                            <div class="slide-panel rounded-start-4 p-3">
-                                <h3>Little Bird Toy Company</h3>
-                                <p>A website where we were tasked to work with a partner to create a site for a fake
-                                    company/client.</p>
+                            <div class="slide-panel rounded-start-4 p-2">
+                                <h4>Coffee Shop</h4>
+                                <h6>A website where we were tasked to work with a partner to craft a website for a fake,
+                                    themed cafe of our creation.</h6>
                                 <a href="https://j-groesbeck.github.io/Coffee-Shop-Project--Soph-/" target="_blank"
                                     type="button" class="btn btn-primary">Visit Site</a>
                             </div>
@@ -126,20 +157,34 @@
                 </div>
             </div>
             <div id="junior">
-                <h1 class="text-center mt-5">JUNIOR YEAR</h1>
+                <section class="text-box text-center mt-5">
+                    <div class="letters">
+                        <span>J</span>
+                        <span>U</span>
+                        <span>N</span>
+                        <span>I</span>
+                        <span>O</span>
+                        <span>R</span>
+                        <span style="width: 0.5em; display: inline-block;"></span> <!-- small spacer for the space -->
+                        <span>Y</span>
+                        <span>E</span>
+                        <span>A</span>
+                        <span>R</span>
+                    </div>
+                </section>
                 <div class="row g-5 mt-2" v-for="(projectRow, rowIndex) in junior_projects"
                     :key="'junior-row-' + rowIndex">
-                    <div class="col-1"></div>
+                    <div class="d-none d-xl-block col-1"></div>
                     <!-- Inner loop: loop over the two cards (card1, card2) in each row -->
-                    <div class="col-5" v-for="(card, cardIndex) in [ projectRow.card1, projectRow.card2 ]"
+                    <div class="col-12 col-md-6 col-xl-5" v-for="(card, cardIndex) in [ projectRow.card1, projectRow.card2 ]"
                         :key="card.title">
-                        <div class="hover-card" :class="cardIndex === 0 ? 'align-left' : 'align-right'">
+                        <div class="hover-card z-0" :class="cardIndex === 0 ? 'align-left' : 'align-right'">
                             <div class="col-12">
                                 <img :src="card.picture" class="w-100 rounded-4" :alt="card.title" />
                             </div>
-                            <div class="slide-panel p-3" :class="cardIndex === 0 ? 'rounded-end-4' : 'rounded-start-4'">
-                                <h3>{{ card.title }}</h3>
-                                <p>{{ card.description }}</p>
+                            <div class="slide-panel p-2" :class="cardIndex === 0 ? 'rounded-end-4' : 'rounded-start-4'">
+                                <h4>{{ card.title }}</h4>
+                                <h6>{{ card.description }}</h6>
                                 <a :href="card.link" target="_blank" type="button" class="btn btn-primary">Visit
                                     Site</a>
                             </div>
@@ -148,20 +193,34 @@
                 </div>
             </div>
             <div id="senior">
-                <h1 class="text-center mt-5">SENIOR YEAR</h1>
+                <section class="text-box text-center mt-5">
+                    <div class="letters">
+                        <span>S</span>
+                        <span>E</span>
+                        <span>N</span>
+                        <span>I</span>
+                        <span>O</span>
+                        <span>R</span>
+                        <span style="width: 0.5em; display: inline-block;"></span> <!-- small spacer for the space -->
+                        <span>Y</span>
+                        <span>E</span>
+                        <span>A</span>
+                        <span>R</span>
+                    </div>
+                </section>
                 <div class="row g-5 mt-2" v-for="(projectRow, rowIndex) in senior_projects"
                     :key="'senior-row-' + rowIndex">
-                    <div class="col-1"></div>
+                    <div class="d-none d-xl-block col-1"></div>
                     <!-- Inner loop: loop over the two cards (card1, card2) in each row -->
-                    <div class="col-5" v-for="(card, cardIndex) in [ projectRow.card1, projectRow.card2 ]"
+                    <div class="col-12 col-md-6 col-xl-5" v-for="(card, cardIndex) in [projectRow.card1, projectRow.card2 ]"
                         :key="card.title">
-                        <div class="hover-card" :class="cardIndex === 0 ? 'align-left' : 'align-right'">
+                        <div class="hover-card z-0" :class="cardIndex === 0 ? 'align-left' : 'align-right'">
                             <div class="col-12">
                                 <img :src="card.picture" class="w-100 rounded-4" :alt="card.title" />
                             </div>
-                            <div class="slide-panel p-3" :class="cardIndex === 0 ? 'rounded-end-4' : 'rounded-start-4'">
-                                <h3>{{ card.title }}</h3>
-                                <p>{{ card.description }}</p>
+                            <div class="slide-panel p-2" :class="cardIndex === 0 ? 'rounded-end-4' : 'rounded-start-4'">
+                                <h4>{{ card.title }}</h4>
+                                <h6>{{ card.description }}</h6>
                                 <a :href="card.link" target="_blank" type="button" class="btn btn-primary">Visit
                                     Site</a>
                             </div>
@@ -172,7 +231,13 @@
         </div>
     </main>
     <footer>
-        <!-- place footer here -->
+        <footer id="footer">
+            <!-- Links to social media accounts with Font Awesome icons -->
+            <a href="..." target="_blank"
+                class="fa-links px-2 border-start border-end"><i class="fa-brands fa-github fa-2xl pointer"></i></a>
+            <!-- Email displayed in the footer -->
+            <h6 class="mt-1"><b>jacob.groesbeck@icloud.com</b></h6>
+        </footer>
     </footer>
 
     <!-- jQuery first, then your script, then Popper & Bootstrap JS -->

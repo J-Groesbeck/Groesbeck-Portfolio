@@ -23,24 +23,48 @@ window.onload = startMorphing;
 $(`#navigation`).hide();
 var scrollActive = true
 $('.smaller-square').on('click', function () {
-    $(`#navigation`).slideToggle();
+    $('#navigation').slideToggle();
+
+    // Toggle scroll behavior
     if (scrollActive) {
-        $(`body`).css("overflow", "hidden")
+        $('body').css("overflow", "hidden");
     } else {
-        $(`body`).css("overflow", "visible")
+        $('body').css("overflow", "visible");
     }
-    scrollActive = !scrollActive
+    scrollActive = !scrollActive;
+
+    // Icon morph effect
+    const $icon = $('#nav-icon');
+    $icon.addClass('icon-morph-out');
+
+    setTimeout(() => {
+        // Toggle icon classes
+        if ($icon.hasClass('fa-compass')) {
+            $icon.removeClass('fa-regular fa-compass').addClass('fa-solid fa-x');
+        } else {
+            $icon.removeClass('fa-solid fa-x').addClass('fa-regular fa-compass');
+        }
+
+        $icon.removeClass('icon-morph-out').addClass('icon-morph-in');
+
+        // Remove morph-in class after animation finishes
+        setTimeout(() => {
+            $icon.removeClass('icon-morph-in');
+        }, 200);
+    }, 150);
 });
 
 
 
+function animateLetters() {
+    $('.letters span').each(function () {
+        var offsetX = (Math.random() * 2) - 1;
+        var offsetY = (Math.random() * 2) - 1;
+        $(this).css('transform', 'translate(' + offsetX + 'vw, ' + offsetY + 'vw)');
+    });
+}
+
 $(document).ready(function () {
-    setInterval(function () {
-        $('.letters span').each(function () {
-            // Random x/y between -20 and +20 px
-            var offsetX = (Math.random() * 40) - 20;
-            var offsetY = (Math.random() * 40) - 20;
-            $(this).css('transform', 'translate(' + offsetX + 'px, ' + offsetY + 'px)');
-        });
-    }, 3000);
+    animateLetters()
+    setInterval(animateLetters, 3000);
 });
