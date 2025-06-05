@@ -23,13 +23,35 @@ window.onload = startMorphing;
 $(`#navigation`).hide();
 var scrollActive = true
 $('.smaller-square').on('click', function () {
-    $(`#navigation`).slideToggle();
+    $('#navigation').slideToggle();
+
+    // Toggle scroll behavior
     if (scrollActive) {
-        $(`body`).css("overflow", "hidden")
+        $('body').css("overflow", "hidden");
     } else {
-        $(`body`).css("overflow", "visible")
+        $('body').css("overflow", "visible");
     }
-    scrollActive = !scrollActive
+    scrollActive = !scrollActive;
+
+    // Icon morph effect
+    const $icon = $('#nav-icon');
+    $icon.addClass('icon-morph-out');
+
+    setTimeout(() => {
+        // Toggle icon classes
+        if ($icon.hasClass('fa-compass')) {
+            $icon.removeClass('fa-regular fa-compass').addClass('fa-solid fa-x');
+        } else {
+            $icon.removeClass('fa-solid fa-x').addClass('fa-regular fa-compass');
+        }
+
+        $icon.removeClass('icon-morph-out').addClass('icon-morph-in');
+
+        // Remove morph-in class after animation finishes
+        setTimeout(() => {
+            $icon.removeClass('icon-morph-in');
+        }, 200);
+    }, 150);
 });
 
 

@@ -1,4 +1,4 @@
-* {
+body, .container, .container-fluid, main {
     background-color: black;
 }
 
