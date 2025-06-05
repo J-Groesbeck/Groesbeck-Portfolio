@@ -223,3 +223,11 @@ footer * {
     box-sizing: border-box;
     /* ensure the border doesn’t blow out the width/height */
 }
+
+.home-subtitle {
+    display: inline-block;
+    font-size: 6vw;
+    font-weight: 900;
+    background-color: transparent;
+    transition: transform 0.5s ease-in-out;
+}

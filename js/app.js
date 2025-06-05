@@ -98,6 +98,8 @@ const vue_app = Vue.createApp({
                     const $card = $(this);
                     const $panel = $card.find('.slide-panel');
                     const $panelChildren = $panel.children();
+                    const $img = $card.find('img.rounded-4, img.rounded-top-4');
+                    // this will match the <img> whether it currently has rounded-4 or rounded-top-4
 
                     // Remove large-screen hover handlers & any leftover width animations
                     $card.off('mouseenter mouseleave');
@@ -107,6 +109,9 @@ const vue_app = Vue.createApp({
                     $panel
                         .removeClass('rounded-start-4 rounded-end-4 rounded-bottom-4')
                         .addClass('rounded-4');
+
+                    // Ensure the image also starts with rounded-4
+                    $img.removeClass('rounded-top-4').addClass('rounded-4');
 
                     // On tap: toggle panel’s visibility
                     $card.off('click').on('click', function (e) {
@@ -119,7 +124,8 @@ const vue_app = Vue.createApp({
                                     $panel
                                         .removeClass('rounded-bottom-4')
                                         .addClass('rounded-4');
-                                    $card.removeClass('rounded-4').addClass('rounded-top-4')
+                                    // Restore the image to fully-rounded when panel closes
+                                    $img.removeClass('rounded-top-4').addClass('rounded-4');
                                 });
                             });
                         } else {
@@ -127,9 +133,11 @@ const vue_app = Vue.createApp({
                             $panel
                                 .removeClass('rounded-start-4 rounded-end-4 rounded-4')
                                 .addClass('rounded-bottom-4');
-                            $card
-                                .removeClass('rounded-top-4')
-                                .addClass('rounded-4');
+                            // Change the image to have only top corners rounded
+                            $img
+                                .removeClass('rounded-4')
+                                .addClass('rounded-top-4');
+
                             // Slide the panel down, then reveal its contents
                             $panel.slideDown(200, function () {
                                 $panelChildren.slideDown(200);
@@ -155,7 +163,6 @@ const vue_app = Vue.createApp({
             $('.filter-btn').removeClass('active');
             $(`.filter-btn[data-section="${section}"]`).addClass('active');
         }
-
     }
 });
 
