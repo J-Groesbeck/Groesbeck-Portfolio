@@ -78,7 +78,7 @@ body {
     left: 5%;
     transform: rotate(-45deg);
     transform-origin: center center;
-    cursor: context-menu;
+    cursor: default;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -141,7 +141,7 @@ body {
     right: 5%;
     transform: rotate(45deg);
     transform-origin: center center;
-    cursor: context-menu;
+    cursor: default;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -208,7 +208,7 @@ body {
     left: 50%;
     /* center it horizontally under the name */
     transform: translateX(-50%);
-    cursor: context-menu;
+    cursor: default;
 }
 
 /* Keep letters in a row */
